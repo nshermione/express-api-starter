@@ -7,6 +7,7 @@ import * as cors from 'cors';
 import routers from "./routes";
 import {Logger, LogLevel} from "./logger";
 import {loadRouters} from "./helper";
+import {database} from "./db/index";
 
 /**
  * The server.
@@ -45,6 +46,8 @@ export class Server {
         //configure application
         this.config();
 
+        this.database();
+
         //add routes
         this.routes();
     }
@@ -81,6 +84,10 @@ export class Server {
         this.app.use("/", rootRouter);
         this.app.listen(port);
         Logger.info('Server is listening on port: ' + port);
+    }
+
+    private database() {
+        database.connect();
     }
 }
 
