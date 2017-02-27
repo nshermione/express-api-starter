@@ -17,7 +17,6 @@ import {database} from "./db/index";
 export class Server {
 
     public app;
-    private whitelist = ['http://example1.com', 'http://example2.com'];
 
 
     /**
@@ -59,14 +58,7 @@ export class Server {
      * @method config
      */
     public config() {
-        var corsOptions = {
-            origin: function(origin, callback){
-                var originIsWhitelisted = this.whitelist.indexOf(origin) !== -1;
-                callback(originIsWhitelisted ? null : 'Bad Request', originIsWhitelisted);
-            }
-        };
-
-        this.app.use(cors(corsOptions));
+        this.app.use(cors());
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(bodyParser.json());
 

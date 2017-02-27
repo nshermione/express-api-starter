@@ -23,16 +23,9 @@ class Database {
         ref.set(null, callback);
     }
 
-    /**
-     * Read value
-     * @param ref selector
-     * @returns promise
-     *      then: function(readValue)
-     *      catch: function(errorReason)
-     */
     read(ref) {
         var ref = this.db.ref(ref);
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
             ref.on("value", function(snapshot) {
                 resolve(snapshot.val());
             }, function (errorObject) {
