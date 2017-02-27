@@ -2,7 +2,9 @@
   "name": "node-api",
   "main": "server.js",
   "scripts": {
-    "build": "tsc -w -p app/"
+    "build": "tsc -p app/",
+    "build:watch": "tsc -w -p app/",
+    "run": "concurrently \"tsc -w -p app/\" \"nodemon app/server.js\" "
   },
   "dependencies": {
     "@types/body-parser": "0.0.34",
@@ -15,8 +17,10 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.5",
+    "concurrently": "^3.3.0",
     "cors": "^2.8.1",
     "firebase-admin": "^4.1.1",
+    "nodemon": "^1.11.0",
     "socket.io": "^1.7.3",
     "ts-loader": "^2.0.1",
     "typescript": "^2.2.1",
