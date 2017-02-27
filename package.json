@@ -4,7 +4,7 @@
   "scripts": {
     "build": "tsc -p app/",
     "build:watch": "tsc -w -p app/",
-    "run": "concurrently \"tsc -w -p app/\" \"nodemon app/server.js\" "
+    "start": "concurrently \"tsc -w -p app/\" \"nodemon app/server.js\" "
   },
   "dependencies": {
     "@types/body-parser": "0.0.34",
