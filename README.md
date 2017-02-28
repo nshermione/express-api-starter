@@ -1,3 +1,5 @@
+![TravisCI](https://travis-ci.org/nshermione/express-api-starter.svg?branch=master)
+ 
 # express-api-starter
 Expressjs api starter kit
 
