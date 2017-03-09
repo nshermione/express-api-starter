@@ -5,7 +5,7 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as cors from 'cors';
 import routers from "./routes";
-import {Logger, LogLevel} from "./logger";
+import {Logger, LogLevel} from "./services/logger.service";
 import {loadRouters} from "./helper";
 import {database} from "./db/index";
 

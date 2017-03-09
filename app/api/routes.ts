@@ -1,14 +1,7 @@
-/**
- * Created by thinhth2 on 2/27/2017.
- */
-import friendRouter from "./friends";
-import {rootRouter} from "../helper";
-
-var router = rootRouter(function (req, res) {
-    res.json("Welcome to Restful API service");
-});
+import {userRouter} from "./users";
+import {authRouter} from "./auth";
 
 export default {
-    "/": router,
-    "/friends": friendRouter
+    "/auth": authRouter,
+    "/users": userRouter
 }
