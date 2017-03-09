@@ -28,7 +28,7 @@ export class AuthService {
     }
 
     login(username, password) {
-        return new Promise((resolve) => {
+        return new Promise<any>((resolve) => {
             User.findOne(
                 {username: username},
                 'username password secret',

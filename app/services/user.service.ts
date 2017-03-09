@@ -2,7 +2,7 @@ import {User} from "../models/user.model";
 
 export class UserService {
     me(req) {
-        return new Promise(resolve => {
+        return new Promise<any>(resolve => {
             User.findOne(
                 {username: req.username},
                 'username join_date',
